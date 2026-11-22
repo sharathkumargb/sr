@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeWithSharu — Java, C DSA, Git experiments and a medicine expiry reminder for 3rd semester students.">
+  <title>CodeWithSharu | Learn • Build • Grow</title>
+  <link rel="icon" href="assets/sharu-logo.png"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><img src="assets/sharu-logo.png" alt="CodeWithSharu logo"><span>Code<span class="accent">WithSharu</span><small>LEARN • BUILD • GROW</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#resume">Resume</a><a href="#git">Git Commands</a>
+    <a href="#java">Java</a><a href="#dsa">DSA in C</a><a href="#medicine">Medicine</a>
+    <a href="#register" class="nav-cta">Register</a>
+  </nav>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">A STUDENT-FOCUSED LEARNING SPACE</span>
+    <h1>Learn smarter.<br><span class="gradient">Code with Sharu.</span></h1>
+    <p>Practical Java programs, Data Structures in C, Git experiments and useful student tools — organised in one place.</p>
+    <div class="hero-actions"><a class="btn primary" href="#java">Explore programs ↗</a><a class="btn ghost" href="#resume">View my resume</a></div>
+    <div class="hero-note"><span class="pulse"></span> Helpful learning material for 3rd semester students</div>
+  </div>
+  <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><img src="assets/sharu-logo.png" alt="CodeWithSharu CS logo"><div class="float-tag tag-one">Java ☕</div><div class="float-tag tag-two">DSA &lt;/&gt;</div><div class="float-tag tag-three">Git ◈</div></div>
+</section>
+<section class="stats">
+  <div><b>20+</b><span>Java programs</span></div><div><b>10+</b><span>DSA in C examples</span></div><div><b>12</b><span>Git experiments</span></div><div><b>1</b><span>Learning community</span></div>
+</section>
+<section id="resume" class="section">
+  <div class="section-head"><div><span class="eyebrow">ABOUT THE CREATOR</span><h2>My <span class="gradient">Resume</span></h2></div><button class="btn ghost small" onclick="window.print()">Print / Save PDF ↗</button></div>
+  <article class="resume-card">
+    <div class="resume-monogram">SK</div><div class="resume-main"><h3>Sharath Kumar GB</h3><p class="role">2nd Year • Computer Science & Engineering</p><p><b>SJM Institute of Technology</b></p><p class="muted">Student developer interested in programming, problem solving, Java, Data Structures and version control with Git.</p>
+      <div class="chips"><span>Java</span><span>C Programming</span><span>Data Structures</span><span>Git & GitHub</span><span>HTML • CSS • JavaScript</span></div>
+    </div>
+    <div class="resume-side"><span>EDUCATION</span><b>BE – Computer Science & Engineering</b><small>2nd Year</small><small>SJM Institute of Technology</small></div>
+  </article>
+</section>
+<section id="git" class="section tinted">
+  <div class="section-head"><div><span class="eyebrow">VERSION CONTROL LAB</span><h2>Git Global <span class="gradient">Information Tracker</span></h2><p>12 practical Git experiments from the supplied Git Experiments PDF.</p></div></div>
+  <div class="toolbar"><input id="gitSearch" placeholder="Search Git experiment or command…"><span class="muted" id="gitCount"></span></div>
+  <div id="gitList" class="code-list"></div>
+</section>
+<section id="java" class="section">
+  <div class="section-head"><div><span class="eyebrow">JAVA PROGRAMMING</span><h2>20 Java <span class="gradient">Programs</span></h2><p>Choose a program to view the source code and copy it.</p></div></div>
+  <div class="toolbar"><input id="javaSearch" placeholder="Search Java programs…"><span class="muted" id="javaCount"></span></div>
+  <div id="javaList" class="program-grid"></div>
+</section>
+<section id="dsa" class="section tinted">
+  <div class="section-head"><div><span class="eyebrow">DATA STRUCTURES & ALGORITHMS</span><h2>DSA in <span class="gradient">C</span></h2><p>Linear and non-linear data structures with beginner-friendly examples.</p></div></div>
+  <div class="dsa-tabs"><button class="tab active" data-group="all">All</button><button class="tab" data-group="Linear">Linear</button><button class="tab" data-group="Non-linear">Non-linear</button></div>
+  <div id="dsaList" class="program-grid"></div>
+</section>
+<section id="medicine" class="section">
+  <div class="section-head"><div><span class="eyebrow">BONUS STUDENT UTILITY</span><h2>Medicine <span class="gradient">Expiry Reminder</span></h2><p>Track household medicine inventory and see dates that need attention.</p></div></div>
+  <div class="medicine-layout">
+    <form id="medicineForm" class="panel">
+      <h3 id="medicineFormTitle">＋ Add medicine</h3><input type="hidden" id="medicineId">
+      <label>Medicine name<input id="medName" required placeholder="e.g. Paracetamol"></label>
+      <div class="two"><label>Quantity<input id="medQty" type="number" min="0" required placeholder="10"></label><label>Category<select id="medCategory"><option>Tablet</option><option>Capsule</option><option>Syrup</option><option>Ointment</option><option>Other</option></select></label></div>
+      <label>Expiry date<input id="medExpiry" type="date" required></label>
+      <button class="btn primary full" type="submit">Save medicine</button><p class="tiny muted">Records are stored in this browser on this device.</p>
+    </form>
+    <div class="panel inventory"><div class="inventory-head"><h3>Your inventory</h3><input id="medSearch" placeholder="Search medicine…"></div>
+      <div class="medicine-stats"><div><b id="medTotal">0</b><small>Total</small></div><div><b id="medSoon">0</b><small>Expiring ≤30 days</small></div><div><b id="medExpired">0</b><small>Expired</small></div></div>
+      <div id="medicineList" class="medicine-list"><p class="muted">No medicines added yet.</p></div>
+    </div>
+  </div>
+  <p class="notice">Safety note: This is an inventory reminder, not medical advice. Do not use expired medicine. Confirm expiry interpretation and safe disposal with a pharmacist. Browser reminders are not guaranteed notifications.</p>
+</section>
+<section id="register" class="section register-section">
+  <div class="register-copy"><span class="eyebrow">JOIN THE COMMUNITY</span><h2>Register for <span class="gradient">CodeWithSharu</span></h2><p>Join the learning community for programming resources and updates.</p><div class="privacy"><span>🔒</span><div><b>Private registration dashboard</b><p>Only the site owner can read submitted registration details after Firebase is configured with the provided security rules.</p></div></div></div>
+  <form id="registerForm" class="panel register-form"><label>Full name<input id="regName" required placeholder="Your name"></label><label>Email address<input id="regEmail" type="email" required placeholder="you@example.com"></label><label>College / institution<input id="regCollege" placeholder="Your college"></label><label>Year of study<select id="regYear"><option>1st Year</option><option selected>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></label><label class="check"><input type="checkbox" required> I agree to share these details with the CodeWithSharu site owner.</label><button class="btn primary full">Submit registration</button><p id="registerStatus" class="tiny muted">Registration is disabled until you add your Firebase project configuration.</p></form>
+</section>
+<section id="puzzle" class="section puzzle-section">
+  <div class="section-head"><div><span class="eyebrow">TAKE A QUICK BREAK</span><h2>Mini <span class="gradient">Number Puzzle</span></h2><p>Arrange the numbers from 1 to 8. Use the empty tile to move a neighbour.</p></div></div>
+  <div class="puzzle-wrap"><div id="puzzleBoard" class="puzzle-board"></div><div class="puzzle-info"><b id="puzzleMoves">Moves: 0</b><button class="btn primary" id="shufflePuzzle">Shuffle puzzle</button><p id="puzzleMessage" class="muted tiny">Good luck!</p></div></div>
+</section>
+</main>
+<footer><a class="brand footer-brand" href="#home"><img src="assets/sharu-logo.png" alt=""><span>Code<span class="accent">WithSharu</span><small>LEARN • BUILD • GROW</small></span></a><p>Made for learners • Especially useful for 3rd semester students</p><span>© <span id="year"></span> CodeWithSharu</span></footer>
+<dialog id="codeDialog"><div class="dialog-head"><div><span class="eyebrow">SOURCE CODE</span><h3 id="dialogTitle">Program</h3></div><button class="close" id="closeDialog">✕</button></div><pre><code id="dialogCode"></code></pre><div class="dialog-actions"><button class="btn primary" id="copyCode">Copy code</button></div></dialog>
+<script src="data.js"></script><script src="app.js"></script>
+<!-- Firebase setup: copy firebase-config.example.js to firebase-config.js, fill your own config, then uncomment the next line. -->
+<!-- <script type="module" src="firebase-register.js"></script> -->
+</body></html>
